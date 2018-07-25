@@ -11,7 +11,7 @@ locale-gen en_US en_US.UTF-8
 dpkg-reconfigure locales
 
 echo "HOME=$HOME"
-cd /u16
+cd /u18
 
 echo "================= Updating package lists ==================="
 apt-get update
