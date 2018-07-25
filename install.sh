@@ -71,13 +71,13 @@ echo "================= Adding JQ 1.5x ==================="
 apt-get install -q jq=1.5*
 
 echo "================= Installing Node 8.x ==================="
-. /u16/node/install.sh
+. /u18/node/install.sh
 
 echo "================= Installing Java 1.8.0 ==================="
-. /u16/java/install.sh
+. /u18/java/install.sh
 
 echo "================= Installing Ruby 2.5.1  ==================="
-. /u16/ruby/install.sh
+. /u18/ruby/install.sh
 
 
 echo "================= Adding gcloud ============"
