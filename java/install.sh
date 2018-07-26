@@ -1,8 +1,8 @@
 #!/bin/bash -e
 
 echo "================= Installing default-jdk & jre ==================="
-apt-get install -q -y  default-jre=2:1.8*
-apt-get install -q -y default-jdk=2:1.8*
+apt-get install -q -y  default-jre
+apt-get install -q -y default-jdk
 
 echo "================= Installing openjdk-8-jdk ==================="
 add-apt-repository -y ppa:openjdk-r/ppa
