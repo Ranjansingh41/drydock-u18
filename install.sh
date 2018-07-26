@@ -26,46 +26,42 @@ mkdir -p /etc/drydock
 
 echo "================= Installing basic packages ==================="
 apt-get install -y \
-  build-essential=12.1* \
-  curl=7.47* \
-  gcc=4:5.3* \
-  gettext=0.19* \
-  htop=2.0* \
-  libxml2-dev=2.9* \
-  libxslt1-dev=1.1* \
-  make=4.1* \
-  nano=2.5* \
-  openssh-client=1:7* \
-  openssl=1.0* \
-  software-properties-common=0.96* \
-  sudo=1.8**  \
-  texinfo=6.1* \
-  zip=3.0* \
-  unzip=6.0* \
-  wget=1.17* \
-  rsync=3.1* \
-  psmisc=22.21* \
-  netcat-openbsd=1.105* \
-  vim=2:7.4* \
-  groff=1.22.*
+  build-essential \
+  curl \
+  gcc \
+  gettext \
+  htop \
+  libxml2-dev \
+  libxslt1-dev \
+  make \
+  nano \
+  openssh-client \
+  openssl \
+  software-properties-commo \
+  sudo=  \
+  texinfo \
+  zip \
+  unzip \
+  wget \
+  rsync= \
+  psmisc= \
+  netcat-openbsd \
+  vim \
+  groff
 
 echo "================= Installing Python packages ==================="
 apt-get install -q -y \
   python-pip=8.1* \
-  python-software-properties=0.96* \
   python-dev=2.7*
 
-pip install -q virtualenv==16.0.0
-pip install -q pyOpenSSL==18.0.0
 
 echo "================= Installing Git ==================="
-add-apt-repository ppa:git-core/ppa -y
 apt-get update
 apt-get install -q -y git=1:2.*
 
-echo "================= Installing Git LFS ==================="
-curl -sS https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-sudo apt-get install -q git-lfs=2.4.2
+#echo "================= Installing Git LFS ==================="
+#curl -sS https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+#sudo apt-get install -q git-lfs=2.4.2
 
 echo "================= Adding JQ 1.5x ==================="
 apt-get install -q jq=1.5*
@@ -123,7 +119,7 @@ echo "================ Adding azure-cli $AZURE_CLI_VERSION =============="
 echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | \
 sudo tee /etc/apt/sources.list.d/azure-cli.list
 curl -L https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-sudo apt-get install -q apt-transport-https=1.2*
+sudo apt-get install -q apt-transport-https
 sudo apt-get update && sudo apt-get install -y -q azure-cli=$AZURE_CLI_VERSION
 
 echo "================= Adding doctl 1.8.3 ============"
