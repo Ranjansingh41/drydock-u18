@@ -4,7 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 echo "================ Installing locales ======================="
 apt-get clean && apt-get update
-apt-get install -q locales=2.23*
+apt-get install -q locales
 
 dpkg-divert --local --rename --add /sbin/initctl
 locale-gen en_US en_US.UTF-8
@@ -37,14 +37,14 @@ apt-get install -y \
   nano \
   openssh-client \
   openssl \
-  software-properties-commo \
-  sudo=  \
+  software-properties-common \
+  sudo  \
   texinfo \
   zip \
   unzip \
   wget \
-  rsync= \
-  psmisc= \
+  rsync \
+  psmisc \
   netcat-openbsd \
   vim \
   groff
